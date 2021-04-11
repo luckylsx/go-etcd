@@ -4,8 +4,8 @@
 ```
 points := []string{"http://127.0.0.1:2379"}
 ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-registry, err := New(points, WithNameSpace("microservice"), WithCtx(ctx))
-instance := ServiceInstance{
+registry, err := registry.New(points, WithNameSpace("microservice"), registry.WithCtx(ctx))
+instance := registry.ServiceInstance{
     ID:   "1",
     Name: "test",
 }
@@ -20,8 +20,8 @@ cancel()
 ```
 points := []string{"http://127.0.0.1:2379"}
 ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-registry, err := New(points, WithNameSpace("microservice"), WithCtx(ctx))
-instance := ServiceInstance{
+registry, err := registry.New(points, WithNameSpace("microservice"), registry.WithCtx(ctx))
+instance := registry.ServiceInstance{
     ID:   "1",
     Name: "test",
 }
